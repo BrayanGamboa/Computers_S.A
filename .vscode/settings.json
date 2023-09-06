@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "bcsoo2ormxbdkavofmg2-postgresql.services.clever-cloud.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "database": "bcsoo2ormxbdkavofmg2",
+            "username": "un1md9t92euzzilwmqau",
+            "password": "IPsxCcDy8ZhLn4pt0ySC3FsLPVgIvw",
+            "name": "Computers S.A -Prueba Técnica"
+        }
+    ]
+}
