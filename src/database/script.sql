@@ -122,6 +122,7 @@ VALUES (1, 5, 3000),
         (8, 40, 3007),
         (9, 45, 3008),
         (10, 50, 3009);
+
 SELECT * FROM direccion;
 SELECT * FROM cantidad_producto;
 SELECT * FROM pedido;
