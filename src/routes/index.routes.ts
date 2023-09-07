@@ -4,6 +4,8 @@ import { GetProductos, PostProducto } from "../controllers/query.producto";
 
 import { GetDireccion, PostDireccionExtra, PostDireccion } from "../controllers/query.direccion"
 
+import { GetPedido } from "../controllers/query.pedido";
+
 const routes: ServerRoute[] = [
 
 
@@ -21,7 +23,7 @@ const routes: ServerRoute[] = [
           responses: {
             200: { description: "Respuesta exitosa" },
             204: { descripcion: "Sin datos registrados" },
-            500: { descripcion: "Error interno del servidor"},
+            500: { descripcion: "Error interno del servidor" },
           },
         }
       }
@@ -60,7 +62,6 @@ const routes: ServerRoute[] = [
           responses: {
             200: { description: "Respuesta exitosa" },
             204: { descripcion: "Sin datos registrados" },
-            409: { descripcion: "Error al enviar los datos (Conflicto de datos)" },
             500: { descripcion: "Error interno del servidor" },
           },
         }
@@ -100,6 +101,26 @@ const routes: ServerRoute[] = [
             200: { description: "Respuesta exitosa" },
             409: { descripcion: "Error al enviar los datos (Conflicto de datos)" },
             400: { descripcion: "Error de petición" },
+          },
+        }
+      }
+    }
+  },
+  //Rutas que interactuan con la tabla 'pedidos'
+  {
+    method: 'GET',
+    path: '/pedido',
+    options: {
+      handler: GetPedido,
+      description: "GET de pedidos",
+      notes: "Es la encargada de traer todos los pedidos que se encuentran en la tabla 'pedido' registradas en la base de datos",
+      tags: ["api", "Pedido", "Get"],
+      plugins: {
+        "hapi-swagger": {
+          responses: {
+            200: { description: "Respuesta exitosa" },
+            204: { descripcion: "Sin datos registrados" },
+            500: { descripcion: "Error interno del servidor" },
           },
         }
       }

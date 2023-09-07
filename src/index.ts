@@ -15,6 +15,27 @@ const init = async () => {
         host: process.env.host
     });
 
+    // await server.register([
+    //     inert,
+    //     vision,
+    //     {
+    //         plugin: hapiswagger,
+    //         options: {
+    //             info: {
+    //                 title: 'Documentación API Computers S.A',
+    //                 version: '1.0.0',
+    //                 description: 'Documentación de la API de Computers S.A, creada en TypeScript con Hapi, integrando una base de datos en PostgreSQL'
+    //             },
+    //             documentationPath: '/api-docs',
+    //             servers: [
+    //                 {
+    //                     URL: `http://localhost:${process.env.PORT}/`,                   
+    //                 }
+    //             ]
+    //         }
+    //     }
+    // ]);
+
     await server.register([
         inert,
         vision,
@@ -22,14 +43,21 @@ const init = async () => {
             plugin: hapiswagger,
             options: {
                 info: {
-                    title: 'Mi API',
+                    title: 'Documentación API Computers S.A',
                     version: '1.0.0',
-                    description: 'Descripción de mi API'
+                    description: 'Documentación de la API de Computers S.A, creada en TypeScript con Hapi, integrando una base de datos en PostgreSQL'
                 },
-                documentationPath: '/documentation'
+                documentationPath: '/api-docs',
+                // servers: [
+                //     {
+                //         url: `http://localhost:${process.env.PORT}/`,
+                //         description: "Local"
+                //     }
+                // ]
             }
         }
     ]);
+    
 
     server.route(routes);
 
@@ -58,9 +86,9 @@ const conexionSequelize = async () => {
     try {
         await sequelize.authenticate();
         console.log('Conexión exitosa con la base de datos.');
-    } catch (error) {        
+    } catch (error) {
         console.error('Error al tratar de conectar a la base de datos: ', error);
-    }finally{
+    } finally {
         sequelize.close();
     }
 }
