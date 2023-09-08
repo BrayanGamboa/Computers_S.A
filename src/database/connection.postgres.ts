@@ -17,10 +17,7 @@ export const pool = new Pool({
 })
 try {
     console.log("Conexión a la BD activa");
-    // console.log(process.env.HOST_BD,
-    //     process.env.USER_BD,
-    //     process.env.PASS_BD,
-    //     process.env.NAME_BD);
+
 
 } catch (err: any) {
     throw new Error(err);
