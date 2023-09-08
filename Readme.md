@@ -20,7 +20,7 @@ Librerías:
 **Morgan**, **Pg**, **Joi**,  **Validator**, **Dotenv** **Swagger**, **hapi-swagger**, **Sequelize** y **ts-node**
 
 Base de Datos:
-
+---
 **Postgress**
 
 

@@ -1,5 +1,5 @@
 import { ServerRoute } from "@hapi/hapi";
-const MailSchema = require('./schemas').Mail;
+
 
 
 //Productos
