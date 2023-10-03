@@ -55,7 +55,7 @@ CREATE TABLE pedido(
     id_direccion INT NOT NULL,
     estado estado_pedido NOT NULL,
     CONSTRAINT pk_pedido PRIMARY KEY (id_pedido),
-    CONSTRAINT fk_pedido_y_direccion FOREIGN KEY (id_direccion) REFERENCES direccion(id_direccion)
+    CONSTRAINT fk_pedido_y_direccion FOREIGN KEY (id_direccion) REFERENCES direccion(id_direccion) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE cantidad_producto(
@@ -64,8 +64,8 @@ CREATE TABLE cantidad_producto(
     id_pedido INT NOT NULL,
     cantidad INT NOT NULL,
     CONSTRAINT pk_cantidad_producto PRIMARY KEY (id_cantidad_producto),
-    CONSTRAINT fk_cantidad_producto_y_producto FOREIGN KEY (id_producto) REFERENCES producto(id_producto),
-    CONSTRAINT fk_cantidad_producto_y_pedido FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido)
+    CONSTRAINT fk_cantidad_producto_y_producto FOREIGN KEY (id_producto) REFERENCES producto(id_producto) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_cantidad_producto_y_pedido FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido) ON DELETE CASCADE ON UPDATE CASCADE
 );
 --Datos de prueba
 INSERT INTO producto (nombre, descripcion, cantidad)

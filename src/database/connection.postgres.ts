@@ -1,13 +1,9 @@
 import { Pool } from "pg";
 import * as dotenv from "dotenv";
-import { Sequelize } from "sequelize";
+
 
 dotenv.config();
 
-export const sequelize =  new  Sequelize  (`${process.env.NAME_BD}`, `${process.env.USER_BD}`, `${process.env.PASS_BD}`,{
-    host: process.env.HOST_BD,
-    dialect: 'postgres'
-}); 
 
 export const pool = new Pool({
     host: process.env.HOST_BD,
@@ -17,10 +13,7 @@ export const pool = new Pool({
 })
 try {
     console.log("Conexión a la BD activa");
-
-
 } catch (err: any) {
-    throw new Error(err);
-    
     console.log("Error to connected the database: ", err.message);
+    throw new Error(err);    
 };

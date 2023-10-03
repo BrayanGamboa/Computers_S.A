@@ -160,7 +160,7 @@ const routes: ServerRoute[] = [
       plugins: {
         "hapi-swagger": {
           responses: {
-            200: { description: "Respuesta exitosa" },
+            200: { description: "Respuesta exitosa"},
             409: { descripcion: "Error al enviar los datos (Conflicto de datos)" },
             400: { descripcion: "Error de petición" },
             401: { descripcion: "Ya se tiene un pedido registrado" },
@@ -242,3 +242,11 @@ export default routes;
 
 
 module.exports = routes;
+
+
+
+
+
+
+
+
